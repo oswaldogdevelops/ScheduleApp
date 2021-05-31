@@ -8768,12 +8768,12 @@ var HourManager = function HourManager() {
   }, [horarios]);
 
   var submitaction = function submitaction(e) {
-    if (turnrefs.current.value == 'mañana') {
+    if (turnrefs.current.value.toLowerCase() == 'mañana') {
       var newSchedule = {
         id: new Date().getTime(),
         turno: 'mañana',
-        horainicio: startrefs.current.value,
-        horafinal: endrefs.current.value
+        horainicio: startrefs.current.value.toLowerCase(),
+        horafinal: endrefs.current.value.toLowerCase()
       };
       var action = {
         type: 'addhorario',
@@ -8782,12 +8782,12 @@ var HourManager = function HourManager() {
       dispatch(action);
     }
 
-    if (turnrefs.current.value == 'tarde') {
+    if (turnrefs.current.value.toLowerCase() == 'tarde') {
       var _newSchedule = {
         id: new Date().getTime(),
         turno: 'tarde',
-        horainicio: startrefs.current.value,
-        horafinal: endrefs.current.value
+        horainicio: startrefs.current.value.toLowerCase(),
+        horafinal: endrefs.current.value.toLowerCase()
       };
       var _action = {
         type: 'addhorario',
@@ -8796,12 +8796,12 @@ var HourManager = function HourManager() {
       dispatch(_action);
     }
 
-    if (turnrefs.current.value == 'noche') {
+    if (turnrefs.current.value.toLowerCase() == 'noche') {
       var _newSchedule2 = {
         id: new Date().getTime(),
         turno: 'noche',
-        horainicio: startrefs.current.value,
-        horafinal: endrefs.current.value
+        horainicio: startrefs.current.value.toLowerCase(),
+        horafinal: endrefs.current.value.toLowerCase()
       };
       var _action2 = {
         type: 'addhorario',
@@ -9002,7 +9002,7 @@ var TeacherManager = function TeacherManager() {
       className: "card-title center"
     }, teacher.name), /*#__PURE__*/react.createElement("p", {
       className: "card-text center"
-    }, teacher.materia), teacher.turno == 'mañana' && schedulecontext.horarios.map(function (schedule) {
+    }, teacher.materia), teacher.turno.toLowerCase() == 'mañana' && schedulecontext.horarios.map(function (schedule) {
       return /*#__PURE__*/react.createElement("div", {
         className: "card animate__animated animate__zoomIn",
         key: schedule.id
@@ -9023,7 +9023,7 @@ var TeacherManager = function TeacherManager() {
       }, "Comienza a las: ", schedule.horainicio), /*#__PURE__*/react.createElement("p", {
         className: "card-text"
       }, "Termina a las : ", schedule.horafinal)));
-    }), teacher.turno == 'tarde' && schedulecontext.horarios.map(function (schedule) {
+    }), teacher.turno.toLowerCase() == 'tarde' && schedulecontext.horarios.map(function (schedule) {
       return /*#__PURE__*/react.createElement("div", {
         className: "card animate__animated animate__zoomIn",
         key: schedule.id
@@ -9048,7 +9048,7 @@ var TeacherManager = function TeacherManager() {
       }, "Comienza a las:", schedule.horainicio), /*#__PURE__*/react.createElement("p", {
         className: "card-text"
       }, "Termina a las : ", schedule.horafinal)));
-    }), teacher.turno == 'noche' && schedulecontext.horarios.map(function (schedule) {
+    }), teacher.turno.toLowerCase() == 'noche' && schedulecontext.horarios.map(function (schedule) {
       return /*#__PURE__*/react.createElement("div", {
         className: "card animate__animated animate__zoomIn",
         key: schedule.id
@@ -9158,11 +9158,11 @@ var Search = function Search() {
       className: "card-title center"
     }, teacher.name), /*#__PURE__*/react.createElement("p", {
       className: "card-text center"
-    }, teacher.materia), teacher.turno == 'mañana' && schedulecontext.horarios.map(function (schedule) {
+    }, teacher.materia), teacher.turno.toLowerCase() == 'mañana' && schedulecontext.horarios.map(function (schedule) {
       return /*#__PURE__*/react.createElement("div", {
         className: "card animate__animated animate__zoomIn",
         key: schedule.id
-      }, schedule.turno == 'mañana' && /*#__PURE__*/react.createElement("div", {
+      }, schedule.turno.toLowerCase() == 'mañana' && /*#__PURE__*/react.createElement("div", {
         className: "card-body"
       }, /*#__PURE__*/react.createElement("h5", {
         className: "card-title"
@@ -9179,11 +9179,11 @@ var Search = function Search() {
       }, "Comienza a las: ", schedule.horainicio), /*#__PURE__*/react.createElement("p", {
         className: "card-text"
       }, "Termina a las : ", schedule.horafinal)));
-    }), teacher.turno == 'tarde' && schedulecontext.horarios.map(function (schedule) {
+    }), teacher.turno.toLowerCase() == 'tarde' && schedulecontext.horarios.map(function (schedule) {
       return /*#__PURE__*/react.createElement("div", {
         className: "card animate__animated animate__zoomIn",
         key: schedule.id
-      }, schedule.turno == 'tarde' && /*#__PURE__*/react.createElement("div", {
+      }, schedule.turno.toLowerCase() == 'tarde' && /*#__PURE__*/react.createElement("div", {
         className: "card-body"
       }, /*#__PURE__*/react.createElement("h5", {
         className: "card-title"
@@ -9204,11 +9204,11 @@ var Search = function Search() {
       }, "Comienza a las:", schedule.horainicio), /*#__PURE__*/react.createElement("p", {
         className: "card-text"
       }, "Termina a las : ", schedule.horafinal)));
-    }), teacher.turno == 'noche' && schedulecontext.horarios.map(function (schedule) {
+    }), teacher.turno.toLowerCase() == 'noche' && schedulecontext.horarios.map(function (schedule) {
       return /*#__PURE__*/react.createElement("div", {
         className: "card animate__animated animate__zoomIn",
         key: schedule.id
-      }, schedule.turno == 'noche' && /*#__PURE__*/react.createElement("div", {
+      }, schedule.turno.toLowerCase() == 'noche' && /*#__PURE__*/react.createElement("div", {
         className: "card-body"
       }, /*#__PURE__*/react.createElement("h5", {
         className: "card-title"
