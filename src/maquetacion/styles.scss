@@ -1,0 +1,61 @@
+$base-color: #c6538c;
+$color: rgba(black, 0.88);
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: $base-color;
+  color: $color;
+}
+
+.center{
+  margin-left: 40%;
+}
+
+.center1{
+  margin-left: 15%;
+}
+
+.navcenter{
+  margin-left: 70%;
+}
+
+.col-md-4{
+  display: none;
+}
+
+.col-md-5{
+  display: block;
+}
+
+.hided{
+  display: none;
+}
+
+@media (max-width: 737px){
+  .center1{
+    margin-left: 0;
+  }
+
+  .center{
+    margin-left: 30%;
+  }
+
+  .col-md-3{
+    width: 60%;
+  }
+
+  .col-md-4{
+    display: block;
+    width: 50%;
+  }
+  
+  .hided{
+    display: block;
+  }
+  
+
+  
+  
+
+}
