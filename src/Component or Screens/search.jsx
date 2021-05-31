@@ -60,10 +60,10 @@ const Search = () =>{
       <h5 className="card-title center">{teacher.name}</h5>
       <p className="card-text center">{teacher.materia}</p>
 {
-teacher.turno == 'mañana'  && schedulecontext.horarios.map(schedule => (
+teacher.turno.toLowerCase() == 'mañana'  && schedulecontext.horarios.map(schedule => (
 <div className="card animate__animated animate__zoomIn" key={schedule.id}>
 {
-  schedule.turno == 'mañana' && 
+  schedule.turno.toLowerCase() == 'mañana' && 
   <div className="card-body"> 
   <h5 className="card-title">turno {schedule.turno}</h5> 
 {
@@ -83,10 +83,10 @@ schedule.horafinal <= moment().format('h') && <p className="alert alert-danger">
 
 }
 {
-teacher.turno == 'tarde'  && schedulecontext.horarios.map(schedule => (
+teacher.turno.toLowerCase() == 'tarde'  && schedulecontext.horarios.map(schedule => (
 <div className="card animate__animated animate__zoomIn" key={schedule.id}>
 {
-  schedule.turno == 'tarde' && 
+  schedule.turno.toLowerCase() == 'tarde' && 
   <div className="card-body"> 
   <h5 className="card-title">turno {schedule.turno}</h5> 
   {
@@ -110,10 +110,10 @@ schedule.horainicio > moment().format('h') && <p className="alert alert-danger">
 
 }
 {
-teacher.turno == 'noche'  && schedulecontext.horarios.map(schedule => (
+teacher.turno.toLowerCase() == 'noche'  && schedulecontext.horarios.map(schedule => (
 <div className="card animate__animated animate__zoomIn" key={schedule.id}>
 {
-  schedule.turno == 'noche' && 
+  schedule.turno.toLowerCase() == 'noche' && 
   <div className="card-body"> 
   <h5 className="card-title">turno {schedule.turno}</h5> 
   {

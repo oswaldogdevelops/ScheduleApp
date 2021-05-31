@@ -108,7 +108,7 @@ dispatch(action)
           <h5 className="card-title center">{teacher.name}</h5>
           <p className="card-text center">{teacher.materia}</p>
 {
-teacher.turno == 'mañana'  && schedulecontext.horarios.map(schedule => (
+teacher.turno.toLowerCase() == 'mañana'  && schedulecontext.horarios.map(schedule => (
   <div className="card animate__animated animate__zoomIn" key={schedule.id}>
     {
       schedule.turno == 'mañana' && 
@@ -131,7 +131,7 @@ teacher.turno == 'mañana'  && schedulecontext.horarios.map(schedule => (
 
 }
 {
-teacher.turno == 'tarde'  && schedulecontext.horarios.map(schedule => (
+teacher.turno.toLowerCase() == 'tarde'  && schedulecontext.horarios.map(schedule => (
   <div className="card animate__animated animate__zoomIn" key={schedule.id}>
     {
       schedule.turno == 'tarde' && 
@@ -158,7 +158,7 @@ teacher.turno == 'tarde'  && schedulecontext.horarios.map(schedule => (
 
 }
 {
-teacher.turno == 'noche'  && schedulecontext.horarios.map(schedule => (
+teacher.turno.toLowerCase() == 'noche'  && schedulecontext.horarios.map(schedule => (
   <div className="card animate__animated animate__zoomIn" key={schedule.id}>
     {
       schedule.turno == 'noche' && 

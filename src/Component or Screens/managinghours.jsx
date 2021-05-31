@@ -23,12 +23,12 @@ const HourManager = () =>{
 
  const submitaction = (e) =>{
 
-   if(turnrefs.current.value == 'mañana'){
+   if(turnrefs.current.value.toLowerCase() == 'mañana'){
        const newSchedule = {
         id: new Date().getTime(),
         turno: 'mañana',
-        horainicio: startrefs.current.value,
-        horafinal: endrefs.current.value
+        horainicio: startrefs.current.value.toLowerCase(),
+        horafinal: endrefs.current.value.toLowerCase()
        
        }
 
@@ -43,12 +43,12 @@ dispatch(action)
 
 
 
-if(turnrefs.current.value == 'tarde'){
+if(turnrefs.current.value.toLowerCase() == 'tarde'){
     const newSchedule = {
      id: new Date().getTime(),
      turno: 'tarde',
-     horainicio: startrefs.current.value,
-     horafinal: endrefs.current.value
+     horainicio: startrefs.current.value.toLowerCase(),
+     horafinal: endrefs.current.value.toLowerCase()
     }
 
 const action = {
@@ -60,12 +60,12 @@ dispatch(action)
 
 }
 
-if(turnrefs.current.value == 'noche'){
+if(turnrefs.current.value.toLowerCase()  == 'noche'){
     const newSchedule = {
      id: new Date().getTime(),
      turno: 'noche',
-     horainicio: startrefs.current.value,
-     horafinal: endrefs.current.value
+     horainicio: startrefs.current.value.toLowerCase(),
+     horafinal: endrefs.current.value.toLowerCase()
     }
 
 const action = {
